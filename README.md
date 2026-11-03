@@ -151,3 +151,5 @@ If Docker assigns the Mac host a different IP address, update `self.ollama_url` 
 - The RViz cube attachment/release behavior is a visual state machine, not a physical grasp simulation.
 - The accurate STL mesh model requires the corresponding files under `src/qarm_description/meshes/`.
 - Joint limits should be treated as simulation limits; no hardware is connected.
+
+See RVIZ simulation in browser: http://localhost:6080/vnc.html
