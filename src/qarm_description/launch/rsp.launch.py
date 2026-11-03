@@ -23,12 +23,12 @@ def generate_launch_description():
             parameters=[{'robot_description': robot_desc}]
         ),
         # add object-world node 
-        # Node(
-        #     package='qarm_description', 
-        #     executable='qarm_object_world.py', 
-        #     name='qarm_object_world', 
-        #     output='screen'
-        # )
+        Node(
+            package='qarm_description', 
+            executable='qarm_object_world.py', 
+            name='qarm_object_world', 
+            output='screen'
+        )
 
         # # Helper node giving us manual sliding GUI knobs to test moving joints
         # Node(

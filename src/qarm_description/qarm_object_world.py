@@ -121,7 +121,7 @@ class QArmObjectWorld(Node):
         marker.color.a = 1.0
 
         if self.cube_state == 'attached':
-            marker.header.frame_id = 'GRIPPER_BASE'
+            marker.header.frame_id = 'link4'
             marker.pose.position.z = 0.16
         elif self.cube_state == 'placed':
             marker.header.frame_id = 'base_link'
