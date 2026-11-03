@@ -1,0 +1,16 @@
+# ROS 2 build products
+build/
+install/
+log/
+
+# Python-generated files
+__pycache__/
+*.py[cod]
+
+# Local secrets and machine-specific settings
+.env
+.env.*
+.vscode/
+
+# ROS runtime files
+.ros/

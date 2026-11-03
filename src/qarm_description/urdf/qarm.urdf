@@ -1,0 +1,144 @@
+<!-- quanswer qarm 4 DOF robotic arm -->
+<?xml version="1.0"?>
+<robot name="qarm">
+  <!-- Base Link -->
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.1" radius="0.1"/>
+      </geometry>
+      <material name="dark_gray"><color rgba="0.2 0.2 0.2 1.0"/></material>
+    </visual>
+  </link>
+
+  <!-- Joint 1 (Base Rotation) -->
+  <joint name="joint1" type="revolute">
+    <parent link="base_link"/>
+    <child link="link1"/>
+    <origin xyz="0 0 0.1" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-3.0" upper="3.0" effort="10.0" velocity="1.5"/>
+  </joint>
+
+  <link name="link1">
+    <visual>
+      < origin xyz="0 0 0.1" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.2" radius="0.05"/>
+      </geometry>
+      <material name="white"><color rgba="1.0 1.0 1.0 1.0"/></material>
+    </visual>
+  </link>
+
+  <!-- Joint 2 (Shoulder) -->
+  <joint name="joint2" type="revolute">
+    <parent link="link1"/>
+    <child link="link2"/>
+    <origin xyz="0 0 0.2" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.5" upper="1.5" effort="10.0" velocity="1.5"/>
+  </joint>
+
+  <link name="link2">
+    <visual>
+      <origin xyz="0 0 0.15" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.04 0.04 0.3"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+  </link>
+
+  <!-- Joint 3 (Elbow) -->
+  <joint name="joint3" type="revolute">
+    <parent link="link2"/>
+    <child link="link3"/>
+    <origin xyz="0 0 0.3" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.5" upper="1.5" effort="10.0" velocity="1.5"/>
+  </joint>
+
+  <link name="link3">
+    <visual>
+      <origin xyz="0 0 0.1" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.03 0.03 0.2"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+  </link>
+
+  <!-- Joint 4 (Wrist Rotation) -->
+  <joint name="joint4" type="revolute">
+    <parent link="link3"/>
+    <child link="link4"/>
+    <origin xyz="0 0 0.2" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-3.0" upper="3.0" effort="10.0" velocity="1.5"/>
+  </joint>
+
+  <link name="link4">
+    <visual>
+      <geometry>
+        <sphere radius="0.03"/>
+      </geometry>
+      <material name="red"><color rgba="0.8 0.1 0.1 1.0"/></material>
+    </visual>
+  </link>
+  
+  <!-- Two-finger virtual gripper -->
+  <joint name="wrist_to_gripper" type="fixed">
+    <parent link="link4"/>
+    <child link="gripper_palm"/>
+    <origin xyz="0 0 0.035" rpy="0 0 0"/>
+  </joint>
+
+  <link name="gripper_palm">
+    <visual>
+      <origin xyz="0 0 0.025" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.08 0.04 0.05"/>
+      </geometry>
+      <material name="gripper_gray">
+        <color rgba="0.15 0.15 0.15 1.0"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="left_gripper_joint" type="prismatic">
+    <parent link="gripper_palm"/>
+    <child link="left_finger"/>
+    <origin xyz="0 0.012 0.07" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="0.0" upper="0.025" effort="10.0" velocity="0.10"/>
+  </joint>
+
+  <link name="left_finger">
+    <visual>
+      <origin xyz="0 0 0.04" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.016 0.022 0.08"/>
+      </geometry>
+      <material name="gripper_gray"/>
+    </visual>
+  </link>
+
+  <joint name="right_gripper_joint" type="prismatic">
+    <parent link="gripper_palm"/>
+    <child link="right_finger"/>
+    <origin xyz="0 -0.012 0.07" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-0.025" upper="0.0" effort="10.0" velocity="0.10"/>
+    <mimic joint="left_gripper_joint" multiplier="-1.0" offset="0.0"/>
+  </joint>
+
+  <link name="right_finger">
+    <visual>
+      <origin xyz="0 0 0.04" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.016 0.022 0.08"/>
+      </geometry>
+      <material name="gripper_gray"/>
+    </visual>
+  </link>
+</robot>
