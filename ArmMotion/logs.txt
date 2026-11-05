@@ -1,0 +1,217 @@
+
+---------------------------------------------------------------------
+Camera calibration
+On Thursday 05. November 2026, 14:08:34
+Calibration directory: C:\Users\fifty\Documents\ArmMotion\calibration
+---------------------------------------------------------------------
+
+
+Preexisting calibration file found: 'C:\Users\fifty\Documents\ArmMotion\calibration\Calib_board.toml'.
+
+Retrieving intrinsic parameters from file. Set "overwrite_intrinsics" to true in Config.toml to recalculate them.
+
+Calculating extrinsic parameters...
+
+Camera cam01_ext.jpg:
+cam01_ext.jpg: Corners not found: please label them by hand.
+
+Camera cam02_ext.jpg:
+cam02_ext.jpg: Corners not found: please label them by hand.
+
+--> Residual (RMS) calibration errors for each camera are respectively [27.116, 2.964] px, 
+which corresponds to [5.795, 4.037] mm.
+
+Calibration file is stored at C:\Users\fifty\Documents\ArmMotion\calibration\Calib_board.toml.
+
+Calibration took 144.14 seconds.
+
+
+---------------------------------------------------------------------
+Pose estimation for , for all frames.
+On Thursday 05. November 2026, 14:10:59
+Project directory: .
+---------------------------------------------------------------------
+
+Estimating pose...
+
+Using model HALPE_26 for Body_with_feet pose estimation in balanced mode.
+Persons detection is run every 4 frames (pose estimation is run for every frame). Tracking is done with sports2d: match_by keypoints, predict_displacement False. Detections are dropped if their average keypoint likelihood is below 0.5.
+No valid CUDA, ROCM, or MPS installation found: using OpenVINO backend with CPU. Does not work on macOS for RTMO models.
+Cannot run pose estimation in parallel with display_detection=true. Set it to false for faster pose estimation.
+Tracking is performed with sports2d.
+
+Found 2 video files in videos.
+Using cpu device with openvino backend.
+--> Output video saved to C:\Users\fifty\Documents\ArmMotion\pose\cam01_pose.mp4.
+--> Output video saved to C:\Users\fifty\Documents\ArmMotion\pose\cam02_pose.mp4.
+
+Pose estimation took 00h05m05s.
+
+
+---------------------------------------------------------------------
+Camera synchronization for , for all frames.
+On Thursday 05. November 2026, 14:16:10
+Project directory: .
+---------------------------------------------------------------------
+
+Synchronizing...
+Selected keypoints: ['RWrist', 'RElbow', 'RShoulder']
+--> Camera #0: selected person #0 at time 0.00 ± 2.00 s
+--> Camera #1: selected person #0 at time 0.00 ± 2.00 s
+
+Keypoints used to compute the best synchronization offset: ['RWrist', 'RElbow', 'RShoulder'].
+These keypoints are filtered with a Butterworth filter (cut-off frequency: 6 Hz, order: 4).
+They are removed when their likelihood is below 0.4.
+
+
+--> Camera cam02 and cam01: 0 frames offset (0 on the selected section), correlation 0.86.
+Synchronization plots saved in C:\Users\fifty\Documents\ArmMotion\pose-sync.
+Synchronized json files saved in C:\Users\fifty\Documents\ArmMotion\pose-sync.
+
+Synchronization took 00h00m47s.
+
+
+---------------------------------------------------------------------
+Associating persons for , for all frames.
+On Thursday 05. November 2026, 14:16:57
+Project directory: .
+---------------------------------------------------------------------
+
+
+Single-person analysis selected.
+
+--> Mean reprojection error for Neck point on all frames is 44.9 px, which roughly corresponds to 9.6 mm. 
+--> In average, 0.19 cameras had to be excluded to reach the demanded 20 px error threshold after excluding points with likelihood below 0.3.
+
+Tracked json files are stored in C:\Users\fifty\Documents\ArmMotion\pose-associated.
+
+Associating persons took 00h00m25s.
+
+
+---------------------------------------------------------------------
+Triangulation of 2D points for , for all frames.
+On Thursday 05. November 2026, 14:17:22
+Project directory: .
+---------------------------------------------------------------------
+
+Triangulating in single-person mode.
+
+Mean reprojection error for Hip is nan px (~ nan m), reached with 0.17 excluded cameras. 
+  Frames 2 to 1288 were not interpolated.
+Mean reprojection error for RHip is nan px (~ nan m), reached with 0.17 excluded cameras. 
+  Frames 2 to 1288 were not interpolated.
+Mean reprojection error for RKnee is nan px (~ nan m), reached with 0.17 excluded cameras. 
+  Frames 2 to 1288 were not interpolated.
+Mean reprojection error for RAnkle is nan px (~ nan m), reached with 1.75 excluded cameras. 
+  Frames 2 to 1288 were not interpolated.
+Mean reprojection error for RBigToe is nan px (~ nan m), reached with 2.0 excluded cameras. 
+  Frames 2 to 1288 were not interpolated.
+Mean reprojection error for RSmallToe is nan px (~ nan m), reached with 2.0 excluded cameras. 
+  Frames 2 to 1288 were not interpolated.
+Mean reprojection error for RHeel is nan px (~ nan m), reached with 2.0 excluded cameras. 
+  Frames 2 to 1288 were not interpolated.
+Mean reprojection error for LHip is nan px (~ nan m), reached with 0.17 excluded cameras. 
+  Frames 2 to 1288 were not interpolated.
+Mean reprojection error for LKnee is nan px (~ nan m), reached with 0.17 excluded cameras. 
+  Frames 2 to 1288 were not interpolated.
+Mean reprojection error for LAnkle is nan px (~ nan m), reached with 1.82 excluded cameras. 
+  Frames 2 to 1288 were not interpolated.
+Mean reprojection error for LBigToe is nan px (~ nan m), reached with 2.0 excluded cameras. 
+  Frames 2 to 1288 were not interpolated.
+Mean reprojection error for LSmallToe is nan px (~ nan m), reached with 2.0 excluded cameras. 
+  Frames 2 to 1288 were not interpolated.
+Mean reprojection error for LHeel is nan px (~ nan m), reached with 1.99 excluded cameras. 
+  Frames 2 to 1288 were not interpolated.
+Mean reprojection error for Neck is nan px (~ nan m), reached with 0.17 excluded cameras. 
+  Frames 2 to 1288 were not interpolated.
+Mean reprojection error for Head is nan px (~ nan m), reached with 0.17 excluded cameras. 
+  Frames 2 to 1288 were not interpolated.
+Mean reprojection error for Nose is nan px (~ nan m), reached with 0.17 excluded cameras. 
+  Frames 2 to 1288 were not interpolated.
+Mean reprojection error for RShoulder is 7.1 px (~ 0.002 m), reached with 0.17 excluded cameras. 
+  Frames 675 to 742 were not interpolated.
+Mean reprojection error for RElbow is 8.1 px (~ 0.002 m), reached with 0.17 excluded cameras. 
+  Frames 39 to 63, 73 to 133, 150 to 416, 435 to 491, 500 to 586, 600 to 643, 753 to 1082, 1088 to 1112, 1134 to 1159, 1165 to 1251 were not interpolated.
+Mean reprojection error for RWrist is 7.9 px (~ 0.002 m), reached with 0.17 excluded cameras. 
+  Frames 1279 to 1288 were interpolated.
+  Frames 2 to 69, 71 to 140, 142 to 548, 574 to 610, 635 to 683, 721 to 752, 755 to 1086, 1088 to 1129, 1132 to 1250 were not interpolated.
+Mean reprojection error for LShoulder is nan px (~ nan m), reached with 0.17 excluded cameras. 
+  Frames 2 to 1288 were not interpolated.
+Mean reprojection error for LElbow is nan px (~ nan m), reached with 0.17 excluded cameras. 
+  Frames 2 to 1288 were not interpolated.
+Mean reprojection error for LWrist is 6.8 px (~ 0.001 m), reached with 0.17 excluded cameras. 
+  Frames 2 to 352, 354 to 817, 843 to 900, 902 to 1288 were not interpolated.
+
+--> Mean reprojection error for all points on frames 1 to 1290 is 7.2 px, which roughly corresponds to 1.5 mm. 
+Cameras were excluded if likelihood was below 0.3 and if the reprojection error was above 15 px.
+Gaps were interpolated with linear method if smaller than 20 frames. Larger gaps were filled with the last valid value.
+In average, 0.82 cameras had to be excluded to reach these thresholds.
+
+Some frames could not be correctly triangulated: trial trimmed between frames [1, 1290].
+You might need to tweak the triangulation parameters in Config.toml (for example, try increasing "reproj_error_threshold_triangulation").
+Camera int_cam02_img was excluded 41% of the time, and Camera int_cam01_img: 41%.
+3D coordinates are stored at C:\Users\fifty\Documents\ArmMotion\pose-3d\ArmMotion_1-1289.trc.
+
+
+
+All trc files have been converted to c3d.
+Limb swapping was not handled.
+Lens distortions were not taken into account.
+
+Triangulation took 00h00m26s.
+
+
+---------------------------------------------------------------------
+Filtering 3D coordinates for , for all frames.
+On Thursday 05. November 2026, 14:17:50
+Project directory: .
+---------------------------------------------------------------------
+
+
+Filtering 3D trc data for person 0...
+--> Outliers rejected with a Hampel filter.
+--> Filter type: Butterworth low-pass. Order 4, Cut-off frequency 6 Hz.
+Filtered 3D .trc coordinates are stored at C:\Users\fifty\Documents\ArmMotion\pose-3d\ArmMotion_1-1289_filt_butterworth.trc.
+All filtered trc files have been converted to c3d.
+Filtering plots are saved in C:\Users\fifty\Documents\ArmMotion\pose-3d\filtering_plots_ik.
+
+
+
+---------------------------------------------------------------------
+Augmentation process for , for all frames.
+On Thursday 05. November 2026, 14:18:17
+Project directory: .
+---------------------------------------------------------------------
+
+Subject height automatically calculated for ArmMotion_1-1289_filt_butterworth.trc: 0.49 m
+
+
+Using Stanford LSTM v0.3 augmenter model. Feet are NOT vertically offset to be at floor level.
+Running v0.3_lower marker augmentation.
+Running v0.3_upper marker augmentation.
+Augmented marker coordinates are stored at C:\Users\fifty\Documents\ArmMotion\pose-3d\ArmMotion_1-1289_filt_butterworth_LSTM.trc.
+Augmented trc files have been converted to c3d.
+
+Marker augmentation took 00h00m01s.
+
+
+---------------------------------------------------------------------
+OpenSim scaling and inverse kinematics for , for all frames.
+On Thursday 05. November 2026, 14:18:20
+Project directory: .
+---------------------------------------------------------------------
+
+Subject height automatically calculated for ArmMotion_1-1289_filt_butterworth_LSTM.trc: 0.49 m
+Subject mass: 70.0 kg
+
+Scaling TRC file: C:\Users\fifty\Documents\ArmMotion\pose-3d\ArmMotion_1-1289_filt_butterworth_LSTM.trc...
+	Done. Scaled model saved to C:\Users\fifty\Documents\ArmMotion\kinematics\ArmMotion_1-1289_filt_butterworth_LSTM_scaled.osim
+
+Running inverse kinematics...
+Running inverse kinematics on C:\Users\fifty\Documents\ArmMotion\pose-3d\ArmMotion_1-1289_filt_butterworth_LSTM.trc
+	Done. Joint angle data saved to C:\Users\fifty\Documents\ArmMotion\kinematics\ArmMotion_1-1289_filt_butterworth_LSTM.mot
+
+OpenSim logs saved to C:\Users\fifty\Documents\ArmMotion\kinematics\opensim_logs.txt.
+
+OpenSim scaling and inverse kinematics took 00h01m34s.
+
